@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "components/header-home/HeaderHome.module.css";
+import styles from "components/Header-home/HeaderHome.module.css";
 import MyBigBgSlider from "components/home_components/MyBigBgSlider/MyBigBgSlider";
 import Btn from "components/UI/Btn/Btn";
 import HeaderTop from "components/UI/HeaderTop/HeaderTop";
