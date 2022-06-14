@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "components/header/Header.module.css";
+import styles from "components/Header/Header.module.css";
 import HeaderTop from "components/UI/HeaderTop/HeaderTop";
 import HeaderNav from "components/UI/HeaderNav/HeaderNav";
 import { useSelector } from "react-redux";
