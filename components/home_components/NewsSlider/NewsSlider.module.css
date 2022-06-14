@@ -1,0 +1,57 @@
+.news-slider {
+  position: relative;
+  height: calc(770px + 80px);
+}
+
+.arrowsContainer {
+  position: absolute;
+  display: block;
+  left: calc(50px + 50px);
+  bottom: 30px;
+}
+
+.slider {
+  height: 100%;
+  display: block;
+}
+
+
+
+.button__bar {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.button__bar li {
+  display: inline;
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+}
+.button__bar li + li {
+  margin-left: 6px;
+}
+
+
+.button__bar li button {
+  vertical-align: middle;
+  border: none;
+  background: var(--primary-color);
+  color: transparent;
+  cursor: pointer;
+  padding: 0;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.button__bar :global(li.slick-active) button,
+.button__bar li button:hover,
+.button__bar li button:focus {
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  transition: 0.5s;
+}

@@ -1,0 +1,49 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  margin-bottom: 32px;
+}
+
+.city {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 900;
+  position: relative;
+  padding-left: 26px;
+}
+
+.city::before {
+  content: "";
+  position: absolute;
+  background-image: url("/images/location.svg");
+  width: 15px;
+  height: 15px;
+  left: 0;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  position: relative;
+  padding-left: 26px;
+}
+
+.phone::before {
+  content: "";
+  position: absolute;
+  background-image: url("/images/phone.svg");
+  width: 15px;
+  height: 15px;
+  left: 0;
+}
+
+.social {
+  justify-content: right;
+}

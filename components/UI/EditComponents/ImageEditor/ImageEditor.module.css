@@ -1,0 +1,25 @@
+.image-editor__title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.image-editor__work-area {
+  width: 270px;
+  margin: 0 auto;
+}
+
+.file-uploader {
+  height: 270px;
+  width: 100%;
+}
+
+.edit-delete_btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}

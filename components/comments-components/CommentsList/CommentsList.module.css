@@ -1,0 +1,23 @@
+.comments {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.comment {
+  border: solid #828282 1px;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.light-comment {
+  background-color: #f8f8f8;
+}
+
+.dark-comment {
+  background-color: #dcdcdc;
+}

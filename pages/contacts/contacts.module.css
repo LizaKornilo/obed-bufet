@@ -1,0 +1,96 @@
+.constacts-subtitle {
+  font-family: "YesevaOne-Regular";
+  font-size: 21px;
+  line-height: 25px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.about-as {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.about-as-input {
+  font-family: "Montserrat";
+  font-weight: 600;
+  min-height: 120px;
+  width: 100%;
+}
+
+.phone,
+.email,
+.address,
+.phone-label,
+.email-label,
+.address-label {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.phone-label,
+.email-label,
+.address-label {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.phone,
+.email {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  margin-top: 25px;
+  column-gap: 35px;
+}
+
+.viber-label,
+.instagram-label {
+  margin-bottom: 5px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.social-link {
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+
+.map {
+  margin-top: 40px;
+  width: 100%;
+  height: 350px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.map__wrapper {
+  width: 100%;
+  height: 40%;
+}
+
+.edit-wrapper {
+  width: fit-content;
+}
+.social-input {
+  height: 26px;
+  width: 180px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 600;
+}

@@ -1,0 +1,83 @@
+.dish-image {
+  /* height: 45vh;
+  width: calc(100vw / 4); */
+  position: relative;
+  width: calc((1200px - 40px * 3) / 4);
+  height: calc((1200px - 40px * 3) / 4);
+  cursor: pointer;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.image {
+  object-position: center center;
+}
+
+.dish-info {
+  margin-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dish-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.dish-weight {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+  color: #1a1a1a99;
+  width: 100%;
+}
+
+.dish-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 5px;
+  color: #1a1a1a99;
+  width: 100%;
+}
+
+.dish-price {
+  font-family: "YesevaOne-Regular";
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+  width: auto;
+}
+
+.dish-price::after {
+  content: " p";
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.edit-delete_btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.file-uploader {
+  height: 270px;
+  width: 100%;
+}
+
+.checkbox {
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.wrapperwrapper {
+  position: fixed;
+  left: 0;
+  top: 100px;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  /* height: 100%; */
+  transition: margin 0.5s;
+  margin: 0 0 0 -600px;
+}
+
+.wrapper.is-nav-open {
+  margin-left: 0;
+}
+.nav {
+  width: 600px;
+  padding: 20px;
+  border-right: 0.6px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.nav__icon {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  border-radius: 0 50px 50px 0;
+  transition: 0.4s;
+}
+
+.nav__icon:hover {
+  /* color: #5eb2ff; */
+  background-color: red;
+  transition: 1s;
+}
+

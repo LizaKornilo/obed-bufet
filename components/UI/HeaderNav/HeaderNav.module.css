@@ -1,0 +1,46 @@
+.wrapperLogoNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 32px;
+  margin-bottom: 92px;
+}
+
+.logo {
+  height: 80px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.siteMenuList {
+  display: inline-block;
+  height: 80px;
+  padding: 30px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.siteMenuItem {
+  display: inline;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  color: #161613;
+  text-transform: uppercase;
+}
+.siteMenuItem a {
+  padding-bottom: 26.5px;
+  border-bottom: 3px solid;
+  border-color: white;
+  transition: color .5s, border-color .5s;
+}
+
+.siteMenuItem a:hover {
+  transition: all .5s;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.siteMenuItem + .siteMenuItem {
+  margin-left: 55px;
+}

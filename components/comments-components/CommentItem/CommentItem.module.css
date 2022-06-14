@@ -1,0 +1,70 @@
+
+.comment__top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.comment__username {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.comment__create-time {
+  font-size: 13px;
+  line-height: 16px;
+  color: #828282;
+}
+
+.comment__text {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.comment__user-email,
+.comment__user-phone {
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.admin-btn {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.admin-answer {
+  border: solid #c4d5f2 1px;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  margin-left: 50px;
+  background-color: #e7eefa;
+  margin-top: 20px;
+}
+
+.admin-answer_title {
+  font-size: 14px;
+  line-height: 17px;
+  color: #1155cc;
+  margin-bottom: 7px;
+}
+
+.admin-answer_text {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+
+.admin-textarea{
+  display: block;
+  margin: 20px 0 20px  50px;
+  width: calc(100% - 50px);
+  padding: 8px 15px;
+}
+
+.cancel-ok-btns{
+  margin-left: 50px;
+  display: flex;
+  column-gap: 10px;
+}

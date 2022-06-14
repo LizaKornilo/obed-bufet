@@ -1,0 +1,20 @@
+.news-list {
+  display: grid;
+  column-gap: 50px;
+  row-gap: 70px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageContainerMod {
+  min-height: 600px;
+  min-width: 800px;
+  position: relative;
+  background-color: #ccc;
+}
+
+.cancel-ok-btns{
+  display: flex;
+  justify-content: end;
+  column-gap: 10px;
+  margin-top: 10px;
+}

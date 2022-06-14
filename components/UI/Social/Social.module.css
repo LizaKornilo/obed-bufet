@@ -1,0 +1,25 @@
+.social {
+  display: flex;
+  min-width: 270px;
+}
+
+.socialLink {
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.social-input {
+  height: 30px;
+  width: 180px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+}

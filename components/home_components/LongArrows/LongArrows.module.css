@@ -1,0 +1,21 @@
+.arrows {
+  display: flex;
+}
+
+.button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.button + .button {
+  margin-left: 50px;
+}
+
+.arrow {
+  fill: white;
+}
+.arrow:hover {
+  fill: var(--primary-color);
+}

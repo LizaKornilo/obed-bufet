@@ -1,0 +1,54 @@
+.new-item {
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.new-image {
+  width: 295px;
+  height: 295px;
+  background-color: #ccc;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.new-subtitle {
+  font-family: "Montserrat";
+  font-weight: 600;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.new-title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  width: 100%;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.new-description {
+  font-family: "Montserrat";
+  font-weight: 600;
+  width: 100%;
+  font-size: 15px;
+  line-height: 23px;
+  min-height: 200px;
+}
+
+.edit-delete_btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.file-uploader{
+  width: 295px;
+  height: 295px;
+}
+

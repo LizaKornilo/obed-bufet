@@ -1,0 +1,32 @@
+.bistro-info {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  align-items: center;
+}
+
+.bistro-info__content {
+  background-color: #fff;
+  width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.bistro-info__title {
+  margin-bottom: 30px;
+}
+
+.bistro-info__text {
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 23px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.bistro-info__input {
+  min-height: 120px;
+  width: 100%;
+}

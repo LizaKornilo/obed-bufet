@@ -1,0 +1,13 @@
+.btn {
+  border: none;
+  height: 60px;
+  background-color: var(--primary-color);
+  padding: 20px 56px;
+  cursor: pointer;
+
+  text-align: center;
+  color: #fff;
+  font-family: "YesevaOne-Regular";
+  font-size: 14px;
+  line-height: 18px;
+}

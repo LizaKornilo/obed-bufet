@@ -1,0 +1,66 @@
+.footer-schedule {
+  color: #fff;
+  padding: 50px 40px;
+  width: 400px;
+}
+
+.footer-schedule__title {
+  font-family: "YesevaOne-Regular";
+  font-size: 21px;
+  line-height: 25px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.schedule-item {
+  font-family: "Montserrat";
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.schedule-item hr {
+  padding: 0;
+  height: 0;
+  border: none;
+  border-top: 2px dotted rgba(255, 255, 255, 0.3);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.schedule-item__day {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.schedule-item__hours {
+  font-size: 13px;
+  color: #ffffff99;
+}
+
+.schedule-input {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 900;
+  color: black;
+}
+
+.schedule-item__additionaly {
+  font-size: 12px;
+  color: #ffffff99;
+  margin-top: 14px;
+}
+
+.footer-schedule__phone {
+  display: block;
+  font-family: "Montserrat";
+  font-size: 23px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.footer-schedule__btn {
+  text-align: center;
+}

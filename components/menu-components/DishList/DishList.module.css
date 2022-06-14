@@ -1,0 +1,13 @@
+.dish-list {
+  display: grid;
+  column-gap: 40px;
+  row-gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.imageContainerMod {
+  min-height: 700px;
+  min-width: 800px;
+  position: relative;
+  background-color: #ccc;
+}

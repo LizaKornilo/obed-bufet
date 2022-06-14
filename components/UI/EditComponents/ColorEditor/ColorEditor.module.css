@@ -1,0 +1,25 @@
+.color-editor__title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.color-editor__work-area {
+  width: 270px;
+  margin: 0 auto;
+}
+
+.color-uploader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-delete_btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}

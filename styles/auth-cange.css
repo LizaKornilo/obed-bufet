@@ -1,0 +1,85 @@
+.auth-change-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.auth-change-form {
+  padding: 20px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.auth-change__title {
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.auth-change__email-label,
+.auth-change__pass-label {
+  display: block;
+  margin-left: 5px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.auth-change__email-input,
+.auth-change__pass-input {
+  font-size: 13px;
+  color: black;
+  height: 30px;
+  width: 400px;
+  padding: 0 15px;
+  border-color: #ccc;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+
+.auth-change__email-input::placeholder,
+.auth-change__pass-input::placeholder {
+  color: #ccc;
+}
+
+.auth-change__err-mess {
+  font-size: 13px;
+  margin-top: 3px;
+  color: rgb(135, 14, 14);
+}
+
+.auth-change__form-nav {
+  font-size: 13px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question__label{
+  margin-right: 10px;
+  display: inline;
+}
+
+.to-login-page,
+.to-change-page {
+  color: rgb(80, 107, 226);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.auth-change__btn {
+  display: block;
+  height: 25px;
+  padding: 0 15px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}

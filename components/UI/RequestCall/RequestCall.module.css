@@ -1,0 +1,63 @@
+.request-call{
+  background-color: white;
+  padding: 50px 40px;
+  width: 360px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: black;
+  border-radius: 5px;
+}
+
+.call__title{
+  font-family: "YesevaOne-Regular";
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;  
+  width: 100%;
+  margin-bottom: 30px;
+
+}
+
+.input {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  display: block;
+  padding: 20px 15px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.input::placeholder{
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.submit-btn{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.err-mess{
+  width: 100%;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-left: 5px;
+  color: rgb(135, 14, 14);
+}
+
+.other-links{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.other-links__link{
+  color: rgb(0, 0, 186);
+}
+
+.other-links__link:hover{
+  text-decoration: underline;
+}

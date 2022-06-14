@@ -1,0 +1,31 @@
+.schedule {
+  font-family: "Montserrat";
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.schedule-item__day {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 17px;
+  margin-bottom: 4px;
+}
+
+.schedule-item__hours,
+.schedule-item__additionaly {
+  font-size: 14px;
+  color: #00000099;
+  font-weight: 600;
+  line-height: 20px;
+}
+.schedule-item__additionaly {
+  margin-top: 12px;
+}
+
+.schedule-input {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 900;
+  color: black;
+}

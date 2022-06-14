@@ -1,0 +1,68 @@
+.new-item {
+  /* margin-bottom: 150px; */
+  position: relative;
+  height: calc(770px + 80px);
+}
+
+.new__image {
+  width: 600px;
+  height: 450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  background-color: #ccc;
+  overflow-wrap: break-word;
+}
+
+.new__content {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  height: 770px;
+  width: calc(100% - 50px);
+  color: white;
+  /* background-color: cadetblue; */
+  padding-left: calc(600px - 50px + 40px);
+  padding-top: 30px;
+  padding-right: 40px;
+  padding-bottom: 150px;
+}
+
+.new__subtitle {
+  font-family: "times-new-roman";
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.new__title {
+  font-family: "YesevaOne-Regular";
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 10px;
+}
+
+.new__description {
+  font-family: "Montserrat";
+  font-size: 18px;
+  line-height: 27px;
+  position: relative;
+  height: calc(100% - 40px - 120px);
+}
+
+.scroll-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 0px;
+}

@@ -1,0 +1,56 @@
+.dish-image {
+  /* height: 45vh;
+  width: calc(100vw / 4); */
+  position: relative;
+  cursor: pointer;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.image {
+  object-position: center center;
+}
+
+.dish-info {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dish-name {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+
+.dish-weight {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 16px;
+  color: #1a1a1a99;
+}
+
+.dish-description {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  color: #1a1a1a99;
+}
+
+.dish-price {
+  font-family: "YesevaOne-Regular";
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+}
+
+.dish-price::after {
+  content: " p";
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 17px;
+}

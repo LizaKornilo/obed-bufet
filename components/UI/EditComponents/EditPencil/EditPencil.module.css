@@ -1,0 +1,12 @@
+.pencil-icon {
+  height: 25px;
+  width: 25px;
+  fill: #bbb;
+  position: absolute;
+  right: -20px;
+  top: -15px;
+  cursor: pointer;
+}
+.pencil-icon:hover{
+  fill: #e31e25;
+}
