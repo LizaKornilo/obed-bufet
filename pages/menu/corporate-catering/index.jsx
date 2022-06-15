@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import { ROUTES } from 'utils/consts';
 import Image from 'next/image';
 import SelectedDishesListContainer from 'components/UI/SelectedDishesListContainer/SelectedDishesListContainer';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 const ccImage1 = "/photos/cc_pages/ccIm1.jpg";
 const ccImage2 = "/photos/cc_pages/ccIm2.jpg";
@@ -29,6 +31,7 @@ function CorporateCatering() {
 
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="page-title">Меню</div>
         <div className={styles["nav-bar"]}>
@@ -84,7 +87,7 @@ function CorporateCatering() {
       </div>
 
       <SelectedDishesListContainer />
-
+      <Footer />
     </div >
   )
 }

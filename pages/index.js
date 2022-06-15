@@ -12,6 +12,8 @@ import EditableByInputElement from 'components/UI/EditComponents/EditableByInput
 import GallerySection from 'components/home_components/GallerySection/GallerySection';
 import ImageEditor from 'components/UI/EditComponents/ImageEditor/ImageEditor';
 import SelectedDishesListContainer from 'components/UI/SelectedDishesListContainer/SelectedDishesListContainer';
+import HeaderHome from 'components/Header-home/HeaderHome';
+import Footer from 'components/Footer/Footer';
 
 export default function Home() {
   const exampleDishesError = useSelector((state) => state.dishes.exampleDishesError);
@@ -24,6 +26,7 @@ export default function Home() {
 
   return (
     <div>
+      <HeaderHome />
       <div className="section">
         <EditableByInputElement
           element={<div className="section__subtitle">{dishSliderSubtitle}</div>}
@@ -85,6 +88,7 @@ export default function Home() {
 
       <SelectedDishesListContainer />
 
+      <Footer />
     </div>
   )
 }

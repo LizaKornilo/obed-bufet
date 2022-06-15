@@ -7,8 +7,8 @@ import { fetchInterfaceSettings } from 'store/action-creators/interfaseSettings-
 import { useRouter } from 'next/router';
 import { ROUTES } from 'utils/consts';
 import SelectedDishesListContainer from 'components/UI/SelectedDishesListContainer/SelectedDishesListContainer';
-import { useEffect } from 'react';
-import { setBanquetDishesActionCreator, setLaunshDishesActionCreator } from 'store/action-creators/dishes-list-action-creator';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 function Lunches() {
   const categories = useSelector((state) => state.dishes.categories);
@@ -17,15 +17,6 @@ function Lunches() {
   const error = useSelector((state) => state.dishes.lunchesError);
 
   const router = useRouter();
-
-  // const launchesDishes = useSelector((state) => state.dishesList.launchesDishes);
-  // const banquetsDishes = useSelector((state) => state.dishesList.banquetsDishes);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const { launchesDishes, banquetsDishes } = JSON.parse(localStorage.getItem("selectedDishesList"));
-  //   dispatch(setLaunshDishesActionCreator(launchesDishes));
-  //   dispatch(setBanquetDishesActionCreator(banquetsDishes));
-  // }, [launchesDishes, banquetsDishes])
 
   const handleChangeOpenedCategory = (categoryName) => {
     categoryName === "Обеды"
@@ -39,6 +30,7 @@ function Lunches() {
 
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="page-title">Меню</div>
         <div className={styles["nav-bar"]}>
@@ -72,6 +64,7 @@ function Lunches() {
       </div>
 
       <SelectedDishesListContainer />
+      <Footer />
     </div>
   )
 }

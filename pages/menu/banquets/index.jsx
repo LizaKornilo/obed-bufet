@@ -9,6 +9,8 @@ import { useRouter } from 'next/router';
 import BanquetsGallerySection from 'components/menu-components/BanquetsGallerySection/BanquetsGallerySection';
 import { ROUTES } from 'utils/consts';
 import SelectedDishesListContainer from 'components/UI/SelectedDishesListContainer/SelectedDishesListContainer';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 function Banquets() {
   const categories = useSelector((state) => state.dishes.categories);
@@ -34,6 +36,7 @@ function Banquets() {
 
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="page-title">Меню</div>
         <div className={styles["nav-bar"]}>
@@ -100,6 +103,7 @@ function Banquets() {
       <BanquetsGallerySection />
 
       <SelectedDishesListContainer />
+      <Footer />
     </div >
   )
 }

@@ -11,6 +11,8 @@ import EditableByInputElement from "components/UI/EditComponents/EditableByInput
 import { INTERFACE_SETTINGS } from "utils/consts";
 import EditableByTextareaElement from "components/UI/EditComponents/EditableByTextareaElement/EditableByTextareaElement";
 import SelectedDishesListContainer from "components/UI/SelectedDishesListContainer/SelectedDishesListContainer";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
 
 export default function Contacts() {
   const aboutAs = useSelector((state) => state.interfaceSettings.aboutAs);
@@ -23,6 +25,7 @@ export default function Contacts() {
 
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="page-title">Контакты</div>
       </div>
@@ -113,6 +116,7 @@ export default function Contacts() {
       </div>
 
       <SelectedDishesListContainer />
+      <Footer />
     </div>
   )
 }

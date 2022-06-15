@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import Footer from '../components/Footer/Footer';
-import HeaderHome from '../components/Header-home/HeaderHome';
-import Header from '../components/Header/Header';
 import '../styles/globals.css';
 import 'styles/auth-cange.css';
 import { wrapper } from 'store';
@@ -22,18 +19,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Сайт бистро Обед-буфет" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {
-        (Component.name === "LoginPage" || Component.name === "ChangePasswordPage")
-          ? null
-          : (Component.name === "Home") ? <HeaderHome /> : <Header />
-      }
       <Component {...pageProps} />
-      {
-        (Component.name === "LoginPage" || Component.name === "ChangePasswordPage")
-          ? null
-          : <Footer />
-      }
     </>
   );
 }
