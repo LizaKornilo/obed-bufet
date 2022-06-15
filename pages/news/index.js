@@ -10,7 +10,6 @@ export default function News() {
       <div className="container">
         <div className="page-title">Новости</div>
         <div className="section">
-
           <NewsList />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { changeAdminAnswer, getComments } from "api/comments.api";
+import { addCommentApi, changeAdminAnswer, getComments } from "api/comments.api";
 
 export const fetchComments = (token) => {
   return async (dispatch) => {
@@ -17,23 +17,28 @@ export const fetchComments = (token) => {
   }
 }
 
-export const addComment = (comment) => {
-  return {
-    type: "ADD_COMMENT",
-    payload: comment,
-  };
+export const addCommentActionCreator = (commentToAdd) => {
+  return async (dispatch) => {
+    try {
+      const request = await addCommentApi(commentToAdd);
+      dispatch({
+        type: "ADD_COMMENT",
+        payload: request,
+      });
+    } catch (e) {
+    }
+  }
 }
 
 export const changeAdminAnswerActionCreator = (commentId, adminAnswerDto, token) => {
   return async (dispatch) => {
     try {
-      // await changeAdminAnswer(commentId, adminAnswerDto, token);
+      await changeAdminAnswer(commentId, adminAnswerDto, token);
       dispatch({
         type: "CHANGE_ADMIN_ANSWER",
         payload: { commentId, adminAnswerDto },
       });
     } catch (e) {
-      console.log("ERROR_______________________:", e);
     }
   }
 }

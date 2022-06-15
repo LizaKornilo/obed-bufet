@@ -20,7 +20,10 @@ export default function LoginPage() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await login(data.password);
+      const res = await login({
+        email: data.email,
+        password: data.password
+      });
       localStorage.setItem('token', res.token);
       dispatch(setIsAdmin(true));
 
@@ -37,6 +40,16 @@ export default function LoginPage() {
     <div className="auth-change-page">
       <form className="auth-change-form" onSubmit={onSubmit}>
         <div className="auth-change__title">Авторизация</div>
+
+        <label className="auth-change__pass-label">Email</label>
+        <input
+          className="auth-change__pass-input"
+          type="email"
+          placeholder="admin@gmail.com"
+          autoComplete="on"
+          {...register('email', { required: true, minLength: 4 })}
+        />
+        {errors.email?.type === 'required' && <div className="auth-change__err-mess">Email - обязательное поле</div>}
 
         <label className="auth-change__pass-label">Пароль</label>
         <input

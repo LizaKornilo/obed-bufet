@@ -1,12 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from "./NewItem.module.css"
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Btn from 'components/UI/Btn/Btn';
 import FileUploader from 'components/UI/FileUploader/FileUploader';
 import FallbackImage from 'components/UI/FallbackImage/FallbackImage';
-
 
 function NewItem({ newItem, onImageClick, onDelete, onEdit }) {
 
@@ -32,21 +30,20 @@ function NewItem({ newItem, onImageClick, onDelete, onEdit }) {
   const enableEditMode = () => {
     setIsEditMode(true)
   }
+
   const disableEditModeAndEdit = () => {
     setIsEditMode(false)
-    onEdit({
+    onEdit(newItem.id, {
       image: editedImage,
       title: editedTitle,
       subTitle: editedSubTitle,
       description: editedDescription,
     })
   }
+
   const disableEditMode = () => {
     setIsEditMode(false)
   }
-
-
-  const [src, setSrc] = React.useState(newItem.imageRef);
 
   return (
     <div className={styles["new-item"]}>
@@ -59,10 +56,7 @@ function NewItem({ newItem, onImageClick, onDelete, onEdit }) {
           >
             && <FallbackImage
               className={styles.image}
-              //src={defaultDishImagePath}
-              src={src}
-              onError={() => setSrc(defaultDishImagePath)}
-
+              src={newItem.imageRef}
               layout="fill"
               objectFit="cover"
               priority={true}

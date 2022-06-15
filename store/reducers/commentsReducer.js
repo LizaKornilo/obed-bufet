@@ -20,7 +20,7 @@ export const commentsReducer = (state = initialState, action) => {
         if (commentsCopy[i].id === action.payload.commentId) {
           commentsCopy[i] = {
             ...commentsCopy[i],
-            adminAnswer: action.payload.adminAnswerDto.text,
+            adminAnswer: action.payload.adminAnswerDto.adminMessage,
           }
         }
       }

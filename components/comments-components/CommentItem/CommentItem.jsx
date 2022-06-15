@@ -1,14 +1,15 @@
 import styles from './CommentItem.module.css';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeAdminAnswerActionCreator, fetchComments } from 'store/action-creators/comments-actions-creator';
+import { changeAdminAnswerActionCreator } from 'store/action-creators/comments-actions-creator';
 import Btn from 'components/UI/Btn/Btn';
 import { useState } from 'react';
+import { getDateString } from 'utils/dateFormatter';
 
 function CommentItem({ comment, cssClass }) {
   const isAdmin = useSelector((state) => state.user.isAdmin);
 
-  const [adminAnswer, setAdminAnswer] = useState(comment.adminAnswer ? comment.adminAnswer : '');
+  const [adminMessage, setAdminMessage] = useState(comment.adminMessage ? comment.adminMessage : '');
   const dispatch = useDispatch();
   const [token, setToken] = useState(null);
   useEffect(() => {
@@ -20,47 +21,47 @@ function CommentItem({ comment, cssClass }) {
     setIsWriteAnswerMode(true);
   }
   const disableIsWriteAnswerMode = () => {
-    setAdminAnswer(comment.adminAnswer ? comment.adminAnswer : '');
+    setAdminMessage(comment.adminMessage ? comment.adminMessage : '');
     setIsWriteAnswerMode(false);
   }
   const change = (e) => {
-    setAdminAnswer(e.target.value)
+    setAdminMessage(e.target.value)
   }
 
   const disableIsWriteAnswerModeAndAnswer = () => {
-    if (adminAnswer) {
-      const adminAnswerDto = { text: adminAnswer };
-      dispatch(changeAdminAnswerActionCreator(comment.id, adminAnswerDto, token));
+    if (adminMessage) {
+      const adminMessageDto = { adminMessage: adminMessage };
+      dispatch(changeAdminAnswerActionCreator(comment.id, adminMessageDto, token));
     }
+    comment.adminMessage = adminMessage;
     disableIsWriteAnswerMode();
   }
-
 
   return <>
     <div className={cssClass}>
       <div className={styles["comment__top"]}>
-        <div className={styles["comment__username"]}>{comment.userName}</div>
-        <div className={styles["comment__create-time"]}>{comment.createTime}</div>
+        <div className={styles["comment__username"]}>{comment.name}</div>
+        <div className={styles["comment__create-time"]}>{(getDateString(new Date(comment.createdAt)))}</div>
       </div>
       {
         isAdmin
         && (
           <div className={styles["comment__for-admin"]}>
             {/* {comment.userEmail && } */}
-            <div className={styles["comment__user-email"]}>E-mail: {comment.userEmail}</div>
-            <div className={styles["comment__user-phone"]}>Телефон: {comment.userPhone}</div>
+            {/* <div className={styles["comment__user-email"]}>E-mail: {comment.userEmail}</div> */}
+            <div className={styles["comment__user-phone"]}>Телефон: {comment.phone}</div>
           </div>
         )
       }
-      <div className={styles["comment__text"]}>{comment.text}</div>
+      <div className={styles["comment__text"]}>{comment.message}</div>
     </div>
 
     {
-      comment.adminAnswer && !isWriteAnswerMode
+      comment.adminMessage && !isWriteAnswerMode
       &&
       <div className={styles["admin-answer"]}>
         <div className={styles["admin-answer_title"]}>Администратор</div>
-        <div className={styles["admin-answer_text"]}>{comment.adminAnswer}</div>
+        <div className={styles["admin-answer_text"]}>{comment.adminMessage}</div>
       </div>
     }
 
@@ -75,7 +76,7 @@ function CommentItem({ comment, cssClass }) {
                 type='text'
                 autoFocus
                 placeholder="Введите ответ админа"
-                value={adminAnswer}
+                value={adminMessage}
                 onChange={change}
               />
               <div className={styles["cancel-ok-btns"]}>
@@ -86,7 +87,7 @@ function CommentItem({ comment, cssClass }) {
           )
           : <div className={styles["admin-btn"]} >
             <Btn
-              text={!comment.adminAnswer ? "Ответить" : "Изменить ответ"}
+              text={!comment.adminMessage ? "Ответить" : "Изменить ответ"}
               cssClass="grey-btn"
               onClickHandler={enableIsWriteAnswerMode}
             />

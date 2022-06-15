@@ -1,8 +1,7 @@
 import Btn from 'components/UI/Btn/Btn';
 import React from 'react';
-import Image from 'next/image';
 import styles from "./EnticingCategory.module.css";
-import { ROUTES, SERVER_URL } from 'utils/consts';
+import { ROUTES } from 'utils/consts';
 import Link from 'next/link';
 import FallbackImage from 'components/UI/FallbackImage/FallbackImage';
 
@@ -22,7 +21,6 @@ function EnticingCategory({ category }) {
       <div className={styles["enticing-category__image"]}>
         <FallbackImage
           className={styles.image}
-          //src={`${SERVER_URL}/${category.imageRef}`}
           src={category.imageRef}
           layout="fill"
           objectFit="cover"
@@ -33,10 +31,7 @@ function EnticingCategory({ category }) {
       <div className={styles["enticing-category__btn"]}>
         <Link href={hrefToGo}>
           <a>
-            <Btn
-              text="Подробнее"
-            // onClickHandler={goToMenuPage(category.name)}
-            />
+            <Btn text="Подробнее" />
           </a>
         </Link>
       </div>

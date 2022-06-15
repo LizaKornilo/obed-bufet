@@ -1,18 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
-import Image from 'next/image';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Modal from "components/UI/Modal/Modal";
-
 import GalleryArrowLeft from "public/images/arrows/left-arrow-svgrepo-com.svg";
 import GalleryArrowRight from "public/images/arrows/right-arrow-svgrepo-com.svg";
 import DishItem from "components/home_components/DishItem/DishItem";
 import styles from './DishesSlider.module.css'
 import { useSelector } from "react-redux";
 import FallbackImage from "components/UI/FallbackImage/FallbackImage";
-
-const defaultDishImagePath = "/images/default_dish_image.jpg";
 
 function SamplePrevArrow(props) {
   const { onClick } = props;
@@ -103,7 +99,7 @@ export default function DishesSlider() {
                   <div className={styles.imageContainerMod} >
                     <FallbackImage
                       className={styles.image}
-                      src={dish.imageRef ? dish.imageRef : defaultDishImagePath}
+                      src={dish.imageRef}
                       layout="fill"
                       objectFit="cover"
                       priority={true}

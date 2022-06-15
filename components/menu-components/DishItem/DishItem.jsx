@@ -4,7 +4,6 @@ import styles from "./DishItem.module.css"
 import { useSelector } from 'react-redux';
 import Btn from 'components/UI/Btn/Btn';
 import FileUploader from 'components/UI/FileUploader/FileUploader';
-import { SERVER_URL } from 'utils/consts';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBanquetDishActionCreator, addLaunshDishActionCreator, deleteBanquetDishActionCreator, deleteLaunshDishActionCreator, setBanquetDishesActionCreator, setLaunshDishesActionCreator } from 'store/action-creators/dishes-list-action-creator';
@@ -26,9 +25,6 @@ function DishItem({ dish, onImageClick, onDelete, onEdit }) {
   const changeName = (e) => {
     setEditedName(e.target.value)
   }
-  // const changeImage = () => {
-  //   setEditedImage()
-  // }
   const changeDescription = (e) => {
     setEditedDescription(e.target.value)
   }
@@ -104,13 +100,11 @@ function DishItem({ dish, onImageClick, onDelete, onEdit }) {
       if (dish.categoryId === 1) {
         dispatch(deleteLaunshDishActionCreator(dish.id))
         const newList = launchesDishes.filter((f) => { return JSON.stringify(f) !== JSON.stringify(dishToCompare) })
-        console.log("newList: ", newList);
         localStorage.setItem("selectedDishesList", JSON.stringify({ launchesDishes: newList, banquetsDishes }))
       }
       if (dish.categoryId === 2) {
         dispatch(deleteBanquetDishActionCreator(dish.id))
         const newList = banquetsDishes.filter((f) => { return JSON.stringify(f) !== JSON.stringify(dishToCompare) })
-        console.log("newList: ", newList);
         localStorage.setItem("selectedDishesList", JSON.stringify({ launchesDishes, banquetsDishes: newList }))
       }
     }
@@ -139,7 +133,6 @@ function DishItem({ dish, onImageClick, onDelete, onEdit }) {
           >
             <FallbackImage
               className={styles.image}
-              //src={dish.imageRef ? `${SERVER_URL}/${dish.imageRef}` : defaultDishImagePath}
               src={dish.imageRef !== "null" ? dish.imageRef : defaultDishImagePath}
               layout="fill"
               objectFit="cover"

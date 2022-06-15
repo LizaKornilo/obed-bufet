@@ -3,13 +3,12 @@ import React from 'react';
 import Btn from 'components/UI/Btn/Btn';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComment, fetchComments } from 'store/action-creators/comments-actions-creator';
-import { getDateString } from 'utils/dateFormatter';
-import { addCommentApi } from 'api/comments.api';
+import { addCommentActionCreator, fetchComments } from 'store/action-creators/comments-actions-creator';
 import { useRouter } from 'next/router';
-import { ROUTES } from 'utils/consts';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const emailRegex = /(?:[a-z0-9!#$%&' * +/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+// const emailRegex = /(?:[a-z0-9!#$%&' * +/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
 function CommentsForm() {
   const router = useRouter();
@@ -17,6 +16,11 @@ function CommentsForm() {
   const addCommentError = useSelector((state) => state.comments.addCommentError);
 
   const dispatch = useDispatch();
+
+  const [token, setToken] = useState(null);
+  useEffect(() => {
+    setToken(window.localStorage.getItem('token'));
+  }, [])
 
   const {
     register,
@@ -28,19 +32,17 @@ function CommentsForm() {
 
   const onSubmit = handleSubmit(async (data) => {
     const commentToAdd = {
-      userName: data.userName,
-      createTime: getDateString(new Date()),
-      text: data.text,
-      userEmail: data.email ? data.email : null,
-      userPhone: data.phone,
+      name: data.name,
+      // createTime: getDateString(new Date()),
+      message: data.message,
+      // userEmail: data.email ? data.email : null,
+      phone: data.phone,
     }
 
     try {
-      await addCommentApi(commentToAdd);
-      dispatch(fetchComments(false));
-
-      router.push(ROUTES.commentsPath);
-      // dispatch(addComment(commentToAdd));
+      dispatch(addCommentActionCreator(commentToAdd));
+      dispatch(fetchComments(token));
+      // router.push(ROUTES.commentsPath);
       reset();
     } catch (e) {
       setError('submit', {
@@ -59,11 +61,11 @@ function CommentsForm() {
         className={styles["input"]}
         type="text"
         autoComplete="off"
-        {...register('userName', { required: true })}
+        {...register('name', { required: true })}
       />
       {errors.userName?.type === 'required' && <div className={styles["err-mess"]}>Имя - обязательное поле</div>}
 
-      <label className={styles["input-label"]}>E-mail</label>
+      {/* <label className={styles["input-label"]}>E-mail</label>
       <input
         className={styles["input"]}
         type="text"
@@ -72,14 +74,14 @@ function CommentsForm() {
           pattern: emailRegex,
         })}
       />
-      {errors.email?.type === 'pattern' && <div className={styles["err-mess"]}>Неверный формат e-mail</div>}
+      {errors.email?.type === 'pattern' && <div className={styles["err-mess"]}>Неверный формат e-mail</div>} */}
 
       <label className={`${styles["input-label"]} ${styles["req__input-label"]}`}>Текст</label>
       <textarea
         className={`${styles["input"]} ${styles["text-input"]}`}
         type="textarea"
         autoComplete="off"
-        {...register('text', { required: true })}
+        {...register('message', { required: true })}
       />
       {errors.text?.type === 'required' && <div className={styles["err-mess"]}>Текст - обязательное поле</div>}
 

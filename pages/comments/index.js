@@ -6,27 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { wrapper } from "store";
 import { fetchComments } from "store/action-creators/comments-actions-creator";
 import { fetchInterfaceSettings } from "store/action-creators/interfaseSettings-action-creator";
-import { setIsAdmin } from "store/action-creators/user-actions-creator";
 
 export default function Comments() {
   const fetchingCommentsError = useSelector((state) => state.comments.fetchingCommentsError);
-  //  const comments = useSelector((state) => state.comments.comments);
-
-
-  // useEffect(async () => {
-  //   await dispatch(fetchComments(
-  //     localStorage.getItem('token')
-  //   ))
-  //   const isAdmin = !!localStorage.getItem('token');
-  //   dispatch(setIsAdmin(isAdmin));
-  // }, []);
   const isAdmin = useSelector((state) => state.user.isAdmin);
-
   const dispatch = useDispatch();
-  // let token = null;
+
   const [token, setToken] = useState(null);
   useEffect(() => {
-    //token = localStorage.getItem('token');
     setToken(localStorage.getItem('token'));
     isAdmin
       ? dispatch(fetchComments(token))
@@ -43,10 +30,6 @@ export default function Comments() {
           ? <div className='fetching-error-msg' style={{ marginTop: 30 }}>
             {fetchingCommentsError}
           </div>
-          // : comments.length === 0
-          //   ? <div className='fetching-error-msg' style={{ marginTop: 30 }}>
-          //     Коментариев пока нет
-          //   </div>
           : <>
             <div className="container">
               <CommentsList />
@@ -54,7 +37,6 @@ export default function Comments() {
             </div>
           </>
       }
-
       <SelectedDishesListContainer />
     </div>
   )
@@ -63,5 +45,4 @@ export default function Comments() {
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req }) => {
   const dispatch = store.dispatch;
   await dispatch(await fetchInterfaceSettings());
-
 });

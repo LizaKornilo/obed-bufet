@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import NewItem from '../NewItem/NewItem';
 import Modal from 'components/UI/Modal/Modal';
 import Slider from 'react-slick/lib/slider';
-import Image from 'next/image';
 import Btn from 'components/UI/Btn/Btn';
 import FileUploader from 'components/UI/FileUploader/FileUploader';
 import { addNewActionCreator, editNewActionCreator } from 'store/action-creators/news-actions-creator';
@@ -84,8 +83,7 @@ function NewsList() {
     formData.append('subTitle', createdSubTitle);
     formData.append('description', createdDescription);
     dispatch(editNewActionCreator(id, updateNewDto, formData, token));
-    Router.reload(window.location.pathname)
-
+   // Router.reload(window.location.pathname)
   }
 
   const handleCreate = async () => {
@@ -107,8 +105,7 @@ function NewsList() {
     setCreatedTitle('');
     setCreatedSubTitle('');
     setCreatedDescription('');
-    Router.reload(window.location.pathname)
-
+    // Router.reload(window.location.pathname)
   }
 
   return news.length

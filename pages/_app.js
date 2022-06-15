@@ -12,7 +12,6 @@ import { checkIsItAdminActionCreator } from 'store/action-creators/user-actions-
 function MyApp({ Component, pageProps }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    // const isItAdmin = true;
     dispatch(checkIsItAdminActionCreator(localStorage.getItem('token')));
   })
 
@@ -35,7 +34,6 @@ function MyApp({ Component, pageProps }) {
           ? null
           : <Footer />
       }
-
     </>
   );
 }
