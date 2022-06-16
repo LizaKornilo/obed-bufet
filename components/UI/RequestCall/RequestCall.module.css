@@ -35,9 +35,37 @@
   font-size: 14px;
 }
 
+.checkbox{
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 14px;
+  /* width: 100%; */
+  /* display: block; */
+  padding: 20px 15px;
+
+}
+
 .submit-btn{
   width: 100%;
   margin-top: 20px;
+  border: none;
+  height: 60px;
+  background-color: var(--primary-color);
+  padding: 20px 56px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-family: "YesevaOne-Regular";
+  font-size: 14px;
+  line-height: 18px;
+
 }
 
 .err-mess{
@@ -60,4 +88,20 @@
 
 .other-links__link:hover{
   text-decoration: underline;
+}
+
+.message{
+  width: 100%;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-left: 5px;
+  color: black;
+}
+
+.error-message{
+  width: 100%;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-left: 5px;
+  color: rgb(135, 14, 14);
 }

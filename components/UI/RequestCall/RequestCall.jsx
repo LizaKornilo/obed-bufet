@@ -4,10 +4,14 @@ import formatPhoneString from 'utils/formatPhoneString';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import Btn from '../Btn/Btn';
+import { sendRequestToCall } from 'api/call';
 
 function RequestCall({ setModalActive }) {
   const phone = useSelector((state) => state.interfaceSettings.phone);
   const carteByLink = 'https://carte.by/grodno/obed-bufet-delivery/';
+
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -17,34 +21,29 @@ function RequestCall({ setModalActive }) {
     reset
   } = useForm();
 
-  // const [message, setMessage] = useState('');
-
   const onSubmit = handleSubmit(async (data) => {
-    console.log("Hello from onSubmit");
-    setModalActive(false);
-    // setMessage('Ваш запрос успешно отправлен');
-    reset();
-    // const commentToAdd = {
-    //   userName: data.userName,
-    //   createTime: getDateString(new Date()),
-    //   text: data.text,
-    //   userEmail: data.email ? data.email : null,
-    //   userPhone: data.phone,
-    // }
-
-    // try {
-    //   await addCommentApi(commentToAdd);
-    //   dispatch(fetchComments(false));
-
-    //   router.push(ROUTES.commentsPath);
-    //   // dispatch(addComment(commentToAdd));
-    //   reset();
-    // } catch (e) {
-    //   setError('submit', {
-    //     type: "serverError",
-    //     message: e,
-    //   });
-    // }
+    // setModalActive(false);
+    console.log(data)
+    try {
+      const selectedDishes = JSON.parse(localStorage.getItem("selectedDishesList"));
+      const dishesToSend = [...selectedDishes.banquetsDishes.map(dish => dish.name),
+      ...selectedDishes.launchesDishes.map(dish => dish.name)]
+      const dataToSend = {
+        name: data.userName,
+        phone: data.phone,
+        menu: (data.chooseCb && selectedDishes)
+          ? dishesToSend
+          : ["Пользователь не выбрал блюда"],
+      }
+      // console.log("dataToSend: ", dataToSend);
+      await sendRequestToCall(dataToSend);
+      setErrorMessage(null);
+      setMessage('Ваш запрос успешно отправлен, мы Вам перезвоним');
+      reset();
+    } catch (e) {
+      setMessage(null);
+      setErrorMessage('Произошла ошибка при отправке запроса' + e);
+    }
   });
 
   return (
@@ -71,15 +70,23 @@ function RequestCall({ setModalActive }) {
         />
         {errors.phone?.type === 'required' && <div className={styles["err-mess"]}>Телефон - обязательное поле</div>}
 
+        <div className={styles["checkbox"]}>
+          <input
+            type="checkbox"
+            name="selectCheckbox"
+            id="selectCheckbox"
+            {...register('chooseCb')}
+          />
+          <label htmlFor="chooseCb" className={styles["label"]}>
+            Прикрепить список блюд
+          </label>
+        </div>
+
         <Btn text='Отправить' cssClass={styles["submit-btn"]} isSubmit={true} />
         {/* {addCommentError && <div className={styles["err-mess"]} style={{ display: 'inline' }}>{addCommentError}</div>} */}
-        {
-          errors.submit?.type === "serverError"
-          && <div className={styles["err-mess"]} style={{ display: 'inline' }}>
-            {errors.submit.message}
-          </div>
-        }
-
+        {errors.submit?.type === "serverError" && <div className="auth-change__err-mess">{errors.submit.message}</div>}
+        <div className={styles["message"]}>{message}</div>
+        <div className={styles["error-message"]}>{errorMessage}</div>
 
       </form>
 
