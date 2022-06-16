@@ -74,7 +74,7 @@ function ImagesEditor({ imagesEditorTitle, minImagesCount, interfaseSettingsKey 
               <div className={styles["edit-delete_btns"]}>
                 <Btn
                   text="Удалить"
-                  cssClass="red-btn"
+                  cssClass={`red-btn ${styles["red-btn"]}`}
                   onClickHandler={() => handleDeleteOne(imageRef)}
                 />
               </div>
@@ -88,14 +88,14 @@ function ImagesEditor({ imagesEditorTitle, minImagesCount, interfaseSettingsKey 
               setImageFiles={setAddedImages}
               cssClass={styles["files-uploader"]} />
             <div className={styles["edit-delete_btns"]}>
-              <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableAddMode} />
-              <Btn text="Ok" cssClass="grey-btn" onClickHandler={disableAddModeAndAdd} />
+              <Btn text="Отмена" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableAddMode} />
+              <Btn text="Ok" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableAddModeAndAdd} />
             </div>
           </div>
           : (<div className="add-btn-container">
             <Btn
               text='Добавить фотографии'
-              cssClass="add-btn"
+              cssClass={`add-btn ${styles["add-btn"]}`}
               onClickHandler={enableAddMode} />
           </div>)
       }

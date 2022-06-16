@@ -80,15 +80,15 @@ function CommentItem({ comment, cssClass }) {
                 onChange={change}
               />
               <div className={styles["cancel-ok-btns"]}>
-                <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableIsWriteAnswerMode} />
-                <Btn text="Ок" cssClass="grey-btn" onClickHandler={disableIsWriteAnswerModeAndAnswer} />
+                <Btn text="Отмена" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableIsWriteAnswerMode} />
+                <Btn text="Ок" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableIsWriteAnswerModeAndAnswer} />
               </div>
             </>
           )
           : <div className={styles["admin-btn"]} >
             <Btn
               text={!comment.adminMessage ? "Ответить" : "Изменить ответ"}
-              cssClass="grey-btn"
+              cssClass={`grey-btn ${styles["grey-btn"]}`}
               onClickHandler={enableIsWriteAnswerMode}
             />
           </div>

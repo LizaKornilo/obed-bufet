@@ -68,3 +68,48 @@
   display: flex;
   column-gap: 10px;
 }
+
+
+.grey-btn {
+  background-color: rgb(219, 219, 219);
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  padding: 10px 15px;
+  line-height: 0px;
+  font-size: 13px;
+  color: black;
+  cursor: pointer;
+}
+
+.red-btn {
+  background-color: rgb(255, 172, 172);
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  padding: 10px 15px;
+  line-height: 0px;
+  font-size: 13px;
+  color: black;
+  cursor: pointer;
+}
+
+.centre-btn-container {
+  margin: 30px;
+  text-align: center;
+}
+
+.add-btn{
+  width: 80%;
+  border-radius: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 10px;
+}
+
+.add-btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc((1200px - 40px * 3) / 4);;
+}

@@ -137,12 +137,12 @@ function NewsList() {
                   <input className={st["new-title"]} value={createdTitle} onChange={changeTitle} placeholder='Введите заголовок' />
                   <textarea className={st["new-description"]} value={createdDescription} onChange={changeDescription} placeholder='Введите описание' />
                   <div className={styles["cancel-ok-btns"]}>
-                    <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableCreateMode} />
-                    <Btn text="Ok" cssClass="grey-btn" onClickHandler={disableCreateModeAndCreate} />
+                    <Btn text="Отмена" cssClass={`grey-btn ${st["grey-btn"]}`} onClickHandler={disableCreateMode} />
+                    <Btn text="Ok" cssClass={`grey-btn ${st["grey-btn"]}`} onClickHandler={disableCreateModeAndCreate} />
                   </div>
                 </div >
                 : (<div className="add-btn-container" style={{ minHeight: 300 }}>
-                  <Btn text='Добавить новость' cssClass="add-btn" onClickHandler={enableCreateMode} />
+                  <Btn text='Добавить новость' cssClass={`add-btn ${st["add-btn"]}`} onClickHandler={enableCreateMode} />
                 </div>)
             )
           }

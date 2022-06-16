@@ -89,12 +89,12 @@ function NewItem({ newItem, onImageClick, onDelete, onEdit }) {
             {
               isEditMode ?
                 <>
-                  <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableEditMode} />
-                  <Btn text="Ok" cssClass="grey-btn" onClickHandler={disableEditModeAndEdit} />
+                  <Btn text="Отмена" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableEditMode} />
+                  <Btn text="Ok" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableEditModeAndEdit} />
                 </>
-                : <Btn text="Изменить" cssClass="grey-btn" onClickHandler={enableEditMode} />
+                : <Btn text="Изменить" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={enableEditMode} />
             }
-            <Btn text="Удалить" cssClass="red-btn" onClickHandler={onDelete} />
+            <Btn text="Удалить" cssClass={`red-btn ${styles["red-btn"]}`} onClickHandler={onDelete} />
           </div>
         )
       }

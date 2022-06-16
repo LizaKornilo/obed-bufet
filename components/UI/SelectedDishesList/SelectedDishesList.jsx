@@ -72,7 +72,7 @@ function SelectedDishesList({ dishes }) {
                       <div className={styles["name"]}>{dish.name ? dish.name : "Нет названия"}</div>
                       <div className={styles["price"]}>{dish.price ? dish.price : 0}</div>
                     </div>
-                    <button className='grey-btn' style={{ alignItems: "end" }} onClick={() => removeItem(dish, 1)}>удалить</button>
+                    <button className={`grey-btn ${styles["grey-btn"]}`} style={{ alignItems: "end" }} onClick={() => removeItem(dish, 1)}>удалить</button>
                   </div>
                 )}
               </div>}
@@ -85,7 +85,7 @@ function SelectedDishesList({ dishes }) {
                       <div className={styles["name"]}>{dish.name ? dish.name : "Нет названия"}</div>
                       <div className={styles["price"]}>{dish.price ? dish.price : 0}</div>
                     </div>
-                    <button className='grey-btn' onClick={() => removeItem(dish, 2)}>удалить</button>
+                    <button className={`grey-btn ${styles["grey-btn"]}`} onClick={() => removeItem(dish, 2)}>удалить</button>
                   </div>
                 )}
               </div>}

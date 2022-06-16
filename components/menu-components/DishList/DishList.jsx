@@ -11,8 +11,6 @@ import FileUploader from 'components/UI/FileUploader/FileUploader';
 import { useDispatch } from 'react-redux';
 import { addDishActionCreator, deleteDishActionCreator, editDishActionCreator } from 'store/action-creators/dishes-actions-creator';
 import { useEffect } from 'react';
-import { SERVER_URL } from 'utils/consts';
-
 import Router from 'next/router'
 import FallbackImage from 'components/UI/FallbackImage/FallbackImage';
 
@@ -20,6 +18,7 @@ import FallbackImage from 'components/UI/FallbackImage/FallbackImage';
 const defaultDishImagePath = "/images/default_dish_image.jpg";
 
 function DishList({ dishes, categoryId }) {
+
   const [modalActive, setModalActive] = useState(false);
   const [sliderRef, setSliderRef] = useState(null)
 
@@ -56,7 +55,7 @@ function DishList({ dishes, categoryId }) {
     formData.append('name', editData.name);
     formData.append('description', editData.description);
     formData.append('price', editData.price);
-    formData.append('weight', editData.weight);  
+    formData.append('weight', editData.weight);
     dispatch(editDishActionCreator(id, updateDishDto, formData, token));
     // Router.reload(window.location.pathname)
   }
@@ -95,7 +94,7 @@ function DishList({ dishes, categoryId }) {
   const handleCreate = async () => {
     const preliminaryImageRef = createdImage ? window.URL.createObjectURL(createdImage) : null;
     const createDishDto = {
-      name: createdName|| "Нет названия",
+      name: createdName || "Нет названия",
       description: createdDescription,
       price: createdPrice,
       weight: createdWeight,
@@ -116,7 +115,7 @@ function DishList({ dishes, categoryId }) {
     setCreatedDescription('');
     setCreatedPrice(0);
     setCreatedWeight('');
-    Router.reload(window.location.pathname)
+    // Router.reload(window.location.pathname)
   }
 
   return (
@@ -154,12 +153,12 @@ function DishList({ dishes, categoryId }) {
                   <input className={st["dish-price"]} value={createdPrice} onChange={changePrice} placeholder='Введите цену' />
                 </div>
                 <div className={st["edit-delete_btns"]}>
-                  <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableCreateMode} />
-                  <Btn text="Ok" cssClass="grey-btn" onClickHandler={disableCreateModeAndCreate} />
+                  <Btn text="Отмена" cssClass={`grey-btn ${st["grey-btn"]}`} onClickHandler={disableCreateMode} />
+                  <Btn text="Ok" cssClass={`grey-btn ${st["grey-btn"]}`} onClickHandler={disableCreateModeAndCreate} />
                 </div>
               </div >
               : (<div className="add-btn-container">
-                <Btn text='Добавить блюдо' cssClass="add-btn" onClickHandler={enableCreateMode} />
+                <Btn text='Добавить блюдо' cssClass={`add-btn ${st["add-btn"]}`} onClickHandler={enableCreateMode} />
               </div>)
           )
         }

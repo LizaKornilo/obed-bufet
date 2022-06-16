@@ -6,6 +6,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { INTERFACE_SETTINGS } from 'utils/consts';
+import styles from "components/home_components/GallerySection/GallerySection.module.css";
 
 function GallerySection({ }) {
   const galleryTitle = useSelector((state) => state.interfaceSettings.galleryTitle);
@@ -49,7 +50,7 @@ function GallerySection({ }) {
             {isImagesEditMode
               ? <>
                 <div className="centre-btn-container">
-                  <Btn text="Закрыть" cssClass="grey-btn" onClickHandler={disableImagesEditMode} />
+                  <Btn text="Закрыть" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableImagesEditMode} />
                 </div>
                 <ImagesEditor
                   imagesEditorTitle="Изменение фотографий слайдера"
@@ -58,7 +59,7 @@ function GallerySection({ }) {
                 />
               </>
               : <div className="centre-btn-container">
-                <Btn text="Изменить фотографии слайдера" cssClass="grey-btn" onClickHandler={enableImagesEditMode} />
+                <Btn text="Изменить фотографии слайдера" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={enableImagesEditMode} />
               </div>
             }
           </div>

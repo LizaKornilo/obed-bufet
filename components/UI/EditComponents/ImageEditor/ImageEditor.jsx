@@ -50,14 +50,14 @@ function ImageEditor({ imageEditorTitle, btnText, interfaseSettingsKey }) {
               setImageFile={setEditedImage}
               cssClass={styles["file-uploader"]} />
             <div className={styles["edit-delete_btns"]}>
-              <Btn text="Отмена" cssClass="grey-btn" onClickHandler={disableEditMode} />
-              <Btn text="Ok" cssClass="grey-btn" onClickHandler={disableEditModeAndEdit} />
+              <Btn text="Отмена" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableEditMode} />
+              <Btn text="Ok" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableEditModeAndEdit} />
             </div>
           </div>
         </>
         : (
           <div className="centre-btn-container">
-            <Btn text={btnText} cssClass="grey-btn" onClickHandler={enableEditMode} />
+            <Btn text={btnText} cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={enableEditMode} />
           </div>
         )
     }

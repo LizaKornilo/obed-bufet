@@ -52,7 +52,7 @@ function HeaderHome() {
           {isImagesEditMode
             ? <>
               <div className="centre-btn-container">
-                <Btn text="Закрыть" cssClass="grey-btn" onClickHandler={disableImagesEditMode} />
+                <Btn text="Закрыть" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={disableImagesEditMode} />
               </div>
               <ImagesEditor
                 imagesEditorTitle="Изменение фотографий хедера"
@@ -61,7 +61,7 @@ function HeaderHome() {
               />
             </>
             : <div className="centre-btn-container">
-              <Btn text="Изменить фотографии хедера" cssClass="grey-btn" onClickHandler={enableImagesEditMode} />
+              <Btn text="Изменить фотографии хедера" cssClass={`grey-btn ${styles["grey-btn"]}`} onClickHandler={enableImagesEditMode} />
             </div>
           }
         </div>
