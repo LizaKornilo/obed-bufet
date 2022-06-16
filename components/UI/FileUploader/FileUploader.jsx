@@ -18,7 +18,9 @@ function FileUploader({ defaultImage, setImageFile, cssClass }) {
       reader.readAsDataURL(file);
       reader.onload = () => {
         // @ts-ignore: Object is possibly 'null'.
-        dropThumb.current.style.backgroundImage = `url('${reader.result}')`;
+        (dropThumb.current) ?
+        dropThumb.current.style.backgroundImage = `url('${reader.result}')`
+        : null;
       };
     } else {
       // @ts-ignore: Object is possibly 'null'.

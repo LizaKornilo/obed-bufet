@@ -3,9 +3,10 @@ const splashImage2 = "https://images.unsplash.com/photo-1478583888903-ed8b1b964b
 
 const initialState = {
   bigSliderImages: [
-    splashImage,
-    splashImage,
-    splashImage,
+    "https://images.unsplash.com/photo-1565895405227-31cffbe0cf86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://images.unsplash.com/photo-1565895405137-3ca0cc5088c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "https://images.unsplash.com/photo-1458644267420-66bc8a5f21e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1336&q=80",
+    "https://images.unsplash.com/photo-1560863223-91879da9cdce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   ],
   headerImage: splashImage,
   footerScheduleBgImage: splashImage2,
@@ -14,20 +15,20 @@ const initialState = {
   newsSliderBgColor: "rgba(122, 40, 85, 0.9)",
   newsSliderBgImage: splashImage2,
   galleryImages: [
-    splashImage,
-    splashImage2,
-    splashImage,
-    splashImage2,
-    splashImage,
-    splashImage,
+    "/photos/banquets_page/banquets_gallery/страница_банкеты_3.jpg",
+    "/photos/banquets_page/banquets_gallery/страница_банкеты_фото_блюд.jpg",
+    "/photos/home_page/home_gallery/ок3.jpg",
+    "/photos/home_page/home_gallery/DSC_9850.jpg",
+    "/photos/home_page/home_gallery/DSC_9861.jpg",
+    "/photos/home_page/home_gallery/DSC_9866.jpg",
   ],
-  banquetsGalleryImages: {
-    splashImage,
-    splashImage2,
-    splashImage,
-    splashImage2,
-    splashImage,
-  },
+  banquetsGalleryImages: [
+    "/photos/banquets_page/banquets_gallery/банкеты_бистро1.jpg",
+    "/photos/banquets_page/banquets_gallery/банкеты_бистро3.jpg",
+    "/photos/banquets_page/banquets_gallery/банкеты_бистро4.jpg",
+    "/photos/banquets_page/banquets_gallery/страница_банкеты_3.jpg",
+    "/photos/banquets_page/banquets_gallery/страница_банкеты_фото_блюд.jpg",
+  ],
   bistroInfoBgImage: splashImage,
 
   city: "Xxxxxx",
@@ -41,36 +42,36 @@ const initialState = {
   address: "г. Xxxxxx, ул. Xxxxxxxx, xx",
   email: "xxxxxx@gmail.com",
   mapIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.3855960276493!2d23.820150039852084!3d53.71808158068156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e07f264b2889d7%3A0xc60c76be50e65222!2z0JHQuNGB0YLRgNC-INCe0LHQtdC0LdCR0YPRhNC10YI!5e1!3m2!1sru!2sby!4v1648539695702!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>',
-
+  
   schedule: [
     {
       day: "Понедельник",
-      hours: "C 12.00 до 16:00",
-      additional: "доставка с 18.00 до 22.00",
+      hours: "12.30 – 18.00",
+      additional: "",
     },
     {
       day: "Вторник",
-      hours: "x XX.XX xx XX.XX",
-      additional: "необязательный доп. текст",
+      hours: "12.30 – 18.00",
+      additional: "",
     },
     {
       day: "Среда",
-      hours: "x XX.XX xx XX.XX",
+      hours: "12.30 – 18.00",
       additional: "",
     },
     {
       day: "Четверг",
-      hours: "x XX.XX xx XX.XX",
+      hours: "12.30 – 18.00",
       additional: "",
     },
     {
       day: "Пятница",
-      hours: "x XX.XX xx XX.XX",
+      hours: "12.30 – 18.00",
       additional: "",
     },
     {
       day: "Суббота",
-      hours: "x XX.XX xx XX.XX",
+      hours: "выходной",
       additional: "",
     },
     {
