@@ -37,10 +37,10 @@ export const fetchAllNews = () => {
 export const addNewActionCreator = (createNewDto, formData, token) => {
   return async (dispatch) => {
     try {
-      // dispatch({
-      //   type: "ADD_NEW",
-      //   payload: createNewDto,
-      // });
+      dispatch({
+        type: "ADD_NEW",
+        payload: createNewDto,
+      });
       await addNew(formData, token);
     } catch (e) {
       console.log("ERROR_______________________:", e);
@@ -55,15 +55,15 @@ export const editNewActionCreator = (newId, updateNewDto, formData, token) => {
       console.log("updateNewDto", updateNewDto);
       console.log("formData", formData);
       await updateNew(newId, formData, token);
-      // const response = await getAllNews();
-      // dispatch({
-      //   type: "FETCH_ALL_NEWS",
-      //   payload: response,
-      // });
-      // dispatch({
-      //   type: "UPDATE_NEW",
-      //   payload: { newId, updateNewDto },
-      // });
+      const response = await getAllNews();
+      dispatch({
+        type: "FETCH_ALL_NEWS",
+        payload: response,
+      });
+      dispatch({
+        type: "UPDATE_NEW",
+        payload: { newId, updateNewDto },
+      });
       
     } catch (e) {
     }
@@ -72,10 +72,11 @@ export const editNewActionCreator = (newId, updateNewDto, formData, token) => {
 export const deleteNewActionCreator = (newId, token) => {
   return async (dispatch) => {
     try {
-      // dispatch({
-      //   type: "DELETE_NEW",
-      //   payload: newId,
-      // });
+      console.log("token: ", token)
+      dispatch({
+        type: "DELETE_NEW",
+        payload: newId,
+      });
       await deleteNew(newId, token);
     } catch (e) {
     }

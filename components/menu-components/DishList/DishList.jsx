@@ -115,7 +115,7 @@ function DishList({ dishes, categoryId }) {
     setCreatedDescription('');
     setCreatedPrice(0);
     setCreatedWeight('');
-    // Router.reload(window.location.pathname)
+    Router.reload(window.location.pathname)
   }
 
   return (

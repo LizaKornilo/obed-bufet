@@ -84,6 +84,12 @@
 }
 
 .add-btn{
+  height: 60px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-family: "YesevaOne-Regular";
+  background-color: var(--primary-color);
   width: 80%;
   border-radius: 15px;
   font-size: 15px;

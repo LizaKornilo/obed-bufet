@@ -33,7 +33,7 @@ function NewItem({ newItem, onImageClick, onDelete, onEdit }) {
 
   const disableEditModeAndEdit = () => {
     setIsEditMode(false)
-    onEdit(newItem.id, {
+    onEdit({
       image: editedImage,
       title: editedTitle,
       subTitle: editedSubTitle,

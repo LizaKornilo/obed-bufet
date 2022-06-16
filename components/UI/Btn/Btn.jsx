@@ -4,7 +4,7 @@ import styles from "./Btn.module.css"
 function Btn({ text, cssClass, onClickHandler, isSubmit = false }) {
   return (
     <button
-      className={cssClass ? `${styles.btn} ${cssClass}` : `${styles.btn}`}
+      className={cssClass ? `${cssClass}` : `${styles.btn}`}
       onClick={onClickHandler ? () => onClickHandler() : null}
       isSubmit = {isSubmit}
     >

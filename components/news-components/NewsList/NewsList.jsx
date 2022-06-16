@@ -7,13 +7,10 @@ import Modal from 'components/UI/Modal/Modal';
 import Slider from 'react-slick/lib/slider';
 import Btn from 'components/UI/Btn/Btn';
 import FileUploader from 'components/UI/FileUploader/FileUploader';
-import { addNewActionCreator, editNewActionCreator } from 'store/action-creators/news-actions-creator';
+import { addNewActionCreator, deleteNewActionCreator, editNewActionCreator } from 'store/action-creators/news-actions-creator';
 import { useDispatch } from 'react-redux';
-import { deleteDishActionCreator } from 'store/action-creators/dishes-actions-creator';
 import Router from 'next/router'
 import FallbackImage from 'components/UI/FallbackImage/FallbackImage';
-
- const defaultDishImagePath = "/images/default_dish_image.jpg";
 
 function NewsList() {
   const news = useSelector((state) => state.news.allNews);
@@ -34,6 +31,7 @@ function NewsList() {
   useEffect(() => {
     setToken(window.localStorage.getItem('token'));
   }, [])
+
 
   const [isCreateMode, setIsCreateMode] = useState(false);
 
@@ -64,9 +62,8 @@ function NewsList() {
   }
 
   const handleDelete = async (id) => {
-    dispatch(deleteDishActionCreator(id, token));
-    Router.reload(window.location.pathname)
-
+    dispatch(deleteNewActionCreator(id, token));
+    // Router.reload(window.location.pathname)
   }
 
   const handleEdit = async (id, editData) => {
@@ -79,9 +76,9 @@ function NewsList() {
     }
     const formData = new FormData();
     formData.append('imageRef', editData.image);
-    formData.append('title', createdTitle);
-    formData.append('subTitle', createdSubTitle);
-    formData.append('description', createdDescription);
+    formData.append('title', editData.title);
+    formData.append('subTitle', editData.subTitle);
+    formData.append('description', editData.description);
     dispatch(editNewActionCreator(id, updateNewDto, formData, token));
    // Router.reload(window.location.pathname)
   }
@@ -162,12 +159,10 @@ function NewsList() {
                         && <FallbackImage
                           className={styles.image}
                           src={newItem.imageRef}
-                          //src={defaultDishImagePath}
                           layout="fill"
                           objectFit="cover"
                           priority={true}
-                          alt={defaultDishImagePath}
-                          //alt={newItem.imageRef}
+                          alt={newItem.imageRef}
                         />
                       }
                     </div>
